@@ -9,6 +9,7 @@
 
 <header>
 <h1>ArchiSpace</h1>
+<button class="menu-toggle" aria-label="Toggle menu">☰ Menu</button>
 <nav>
 <a href="Index.html">Home</a>
 <a href="Services.html">Services</a>
@@ -21,11 +22,11 @@
 <section>
 <h2 class="section-title">Contact Us</h2>
 
-<form onsubmit="redirectPage(event)">
-<input type="text" placeholder="Your Name" required>
-<input type="email" placeholder="Email" required>
-<textarea placeholder="Message"></textarea>
-<button type="submit">Send Message</button>
+<form id="contactForm" data-redirect="thankyou.html">
+	<input type="text" placeholder="Your Name" required>
+	<input type="email" placeholder="Email" required>
+	<textarea placeholder="Message"></textarea>
+	<button type="submit">Send Message</button>
 </form>
 
 </section>
@@ -34,13 +35,9 @@
 © 2026 ArchiSpace Architects
 </footer>
 
-<script>
-function redirectPage(e){
-e.preventDefault();
-alert("Inquiry Submitted!");
-window.location.href="Index.html";
-}
-</script>
+	<button id="scrollTop" title="Back to top">↑</button>
+
+	<script src="script.js"></script>
 
 </body>
 </html>
