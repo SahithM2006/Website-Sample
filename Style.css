@@ -1,0 +1,216 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+    color:#333;
+}
+
+/* NAVBAR */
+header{
+    background:#111;
+    color:white;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    margin-left:20px;
+    text-decoration:none;
+}
+
+nav a:hover{
+    color:#c19a6b;
+}
+
+/* HERO */
+.hero{
+    height:80vh;
+    background:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e') center/cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+}
+
+.hero h2{
+    font-size:42px;
+    background:rgba(0,0,0,0.5);
+    padding:20px;
+}
+
+/* SECTIONS */
+section{
+    padding:60px 40px;
+}
+
+.section-title{
+    font-size:30px;
+    margin-bottom:20px;
+}
+
+/* SERVICES */
+.services{
+    display:flex;
+    gap:20px;
+}
+
+.service-box{
+    background:white;
+    padding:20px;
+    flex:1;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* PROJECTS */
+.projects{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.projects img{
+    width:100%;
+    border-radius:10px;
+}
+
+/* CONTACT */
+form{
+    max-width:500px;
+    display:flex;
+    flex-direction:column;
+}
+
+input,textarea{
+    margin-bottom:12px;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:6px;
+}
+
+button{
+    padding:12px;
+    background:#111;
+    color:white;
+    border:none;
+}
+
+/* FOOTER */
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+    .services{
+        flex-direction:column;
+    }
+
+    .projects{
+        grid-template-columns:1fr;
+    }
+
+    .hero h2{
+        font-size:26px;
+    }
+}
+
+
+
+
+
+
+
+
+/* SERVICES GRID UPGRADE */
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+/* SERVICE CARD */
+
+.service-box{
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    text-align:center;
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+    transition:0.4s;
+    position:relative;
+    overflow:hidden;
+}
+
+/* ICON */
+
+.service-box i{
+    font-size:40px;
+    color:#c19a6b;
+    margin-bottom:15px;
+}
+
+/* BUTTON */
+
+.service-box button{
+    margin-top:15px;
+    padding:10px 18px;
+    border:none;
+    background:#111;
+    color:white;
+    cursor:pointer;
+    border-radius:6px;
+    transition:0.3s;
+}
+
+.service-box button:hover{
+    background:#c19a6b;
+}
+
+/* HOVER EFFECTS */
+
+.service-box:hover{
+    transform:translateY(-12px) scale(1.02);
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* TOP BORDER ANIMATION */
+
+.service-box::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:0%;
+    height:4px;
+    background:#c19a6b;
+    transition:0.4s;
+}
+
+.service-box:hover::before{
+    width:100%;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .services{
+        grid-template-columns:1fr;
+    }
+
+}

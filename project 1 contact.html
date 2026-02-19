@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Contact</title>
+<link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+
+<header>
+<h1>ArchiSpace</h1>
+<nav>
+<a href="Project 1 index.html">Home</a>
+<a href="Project 1 services.html">Services</a>
+<a href="Project 1 projects.html">Projects</a>
+<a href="project 1 contact.html">Contact</a>
+
+</nav>
+</header>
+
+<section>
+<h2 class="section-title">Contact Us</h2>
+
+<form onsubmit="redirectPage(event)">
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Email" required>
+<textarea placeholder="Message"></textarea>
+<button type="submit">Send Message</button>
+</form>
+
+</section>
+
+<footer>
+© 2026 ArchiSpace Architects
+</footer>
+
+<script>
+function redirectPage(e){
+e.preventDefault();
+alert("Inquiry Submitted!");
+window.location.href="Project 1 index.html";
+}
+</script>
+
+</body>
+</html>

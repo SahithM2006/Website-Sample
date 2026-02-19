@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>ArchiSpace | Services</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- GOOGLE FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<!-- FONT AWESOME ICONS -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* ================= GLOBAL ================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+    color:#333;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    background:#111;
+    color:white;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+/* BRAND SECTION */
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+/* LOGO SPACE */
+
+.logo-box{
+    width:60px;
+    height:60px;
+    background:white;
+    border-radius:10px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    transition:0.3s;
+}
+
+.logo-box:hover{
+    transform:scale(1.1);
+}
+
+/* COMPANY NAME */
+
+.company-name{
+    font-size:24px;
+    letter-spacing:2px;
+}
+
+/* NAVBAR */
+
+nav a{
+    color:white;
+    margin-left:20px;
+    text-decoration:none;
+}
+
+nav a:hover{
+    color:#c19a6b;
+}
+
+/* ================= SECTION ================= */
+
+section{
+    padding:60px 40px;
+}
+
+.section-title{
+    font-size:32px;
+    margin-bottom:30px;
+    text-align:center;
+}
+
+/* ================= SERVICES GRID ================= */
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+/* SERVICE CARD */
+
+.service-box{
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    text-align:center;
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+    transition:0.4s;
+    position:relative;
+    overflow:hidden;
+}
+
+.service-box i{
+    font-size:40px;
+    color:#c19a6b;
+    margin-bottom:15px;
+}
+
+.service-box button{
+    margin-top:15px;
+    padding:10px 18px;
+    border:none;
+    background:#111;
+    color:white;
+    cursor:pointer;
+    border-radius:6px;
+    transition:0.3s;
+}
+
+.service-box button:hover{
+    background:#c19a6b;
+}
+
+/* HOVER EFFECT */
+
+.service-box:hover{
+    transform:translateY(-12px) scale(1.02);
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* TOP BORDER ANIMATION */
+
+.service-box::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:0%;
+    height:4px;
+    background:#c19a6b;
+    transition:0.4s;
+}
+
+.service-box:hover::before{
+    width:100%;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:768px){
+
+    .services{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+<div class="brand">
+
+    <!-- AUTO GENERATED SVG LOGO -->
+    <div class="logo-box">
+
+        <svg width="40" height="40" viewBox="0 0 120 80">
+
+            <!-- Buildings -->
+            <rect x="10" y="30" width="20" height="40" fill="#c19a6b"/>
+            <rect x="40" y="15" width="25" height="55" fill="#b8864a"/>
+            <rect x="75" y="25" width="30" height="45" fill="#d4a76a"/>
+
+        </svg>
+
+    </div>
+
+    <!-- COMPANY NAME -->
+    <h1 class="company-name">ArchiSpace</h1>
+
+</div>
+
+<!-- NAVIGATION -->
+
+<nav>
+<a href="Project 1 home.html">Home</a>
+<a href="Project 1 services.html">Services</a>
+<a href="Project 1 projects.html">Projects</a>
+<a href="Project 1 contact.html">Contact</a>
+</nav>
+
+</header>
+
+<!-- ================= SERVICES ================= -->
+
+<section>
+
+<h2 class="section-title">Our Services</h2>
+
+<div class="services">
+
+<div class="service-box">
+<i class="fa-solid fa-house"></i>
+<h3>Residential Design</h3>
+<p>Luxury villas and smart homes designed for comfort and sustainability.</p>
+<button>View Plans</button>
+</div>
+
+<div class="service-box">
+<i class="fa-solid fa-building"></i>
+<h3>Commercial Architecture</h3>
+<p>Corporate offices and business complexes built for productivity.</p>
+<button>View Projects</button>
+</div>
+
+<div class="service-box">
+<i class="fa-solid fa-couch"></i>
+<h3>Interior Planning</h3>
+<p>Modern interiors blending aesthetics with functionality.</p>
+<button>Explore Designs</button>
+</div>
+
+<div class="service-box">
+<i class="fa-solid fa-city"></i>
+<h3>Urban Planning</h3>
+<p>City layouts and smart infrastructure development.</p>
+<button>Learn More</button>
+</div>
+
+<div class="service-box">
+<i class="fa-solid fa-drafting-compass"></i>
+<h3>3D Visualization</h3>
+<p>High-quality 3D walkthroughs and modeling.</p>
+<button>View Models</button>
+</div>
+
+<div class="service-box">
+<i class="fa-solid fa-leaf"></i>
+<h3>Sustainable Design</h3>
+<p>Eco-friendly green building concepts.</p>
+<button>See Concepts</button>
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+© 2026 ArchiSpace Architects
+</footer>
+
+</body>
+</html>

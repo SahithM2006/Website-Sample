@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ArchiSpace Architects</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* ===== GLOBAL ===== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+    color:#333;
+}
+
+/* ===== NAVBAR ===== */
+header{
+    background:#111;
+    color:white;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    margin-left:20px;
+    text-decoration:none;
+}
+
+nav a:hover{
+    color:#c19a6b;
+}
+
+/* ===== HERO ===== */
+.hero{
+    height:90vh;
+    background:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e') center/cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+}
+
+.hero h2{
+    font-size:48px;
+    background:rgba(0,0,0,0.5);
+    padding:20px;
+}
+
+/* ===== SECTIONS ===== */
+section{
+    padding:60px 40px;
+}
+
+.section-title{
+    font-size:30px;
+    margin-bottom:20px;
+}
+
+/* ===== SERVICES ===== */
+.services{
+    display:flex;
+    gap:20px;
+}
+
+.service-box{
+    background:white;
+    padding:20px;
+    flex:1;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* ===== PROJECTS ===== */
+.projects{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.projects img{
+    width:100%;
+    border-radius:10px;
+}
+
+/* ===== CONTACT ===== */
+form{
+    max-width:500px;
+    display:flex;
+    flex-direction:column;
+}
+
+input,textarea{
+    margin-bottom:12px;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:6px;
+}
+
+button{
+    padding:12px;
+    background:#111;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#c19a6b;
+}
+
+/* ===== FOOTER ===== */
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media(max-width:768px){
+
+    .services{
+        flex-direction:column;
+    }
+
+    .projects{
+        grid-template-columns:1fr;
+    }
+
+    .hero h2{
+        font-size:28px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ===============================
+     🌐 INTERNET CHECK SCRIPT
+     Blocks site if offline
+================================ -->
+
+<script>
+
+function checkInternet(){
+
+    if(!navigator.onLine){
+
+        document.body.innerHTML = `
+        <div style="
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            flex-direction:column;
+            background:#111;
+            color:white;
+            font-family:sans-serif;
+            text-align:center;
+        ">
+            <h1>No Internet Connection</h1>
+            <p>Please connect to Wi-Fi or Mobile Data</p>
+        </div>
+        `;
+    }
+}
+
+checkInternet();
+window.addEventListener("offline",checkInternet);
+
+</script>
+
+<!-- ===== NAVBAR ===== -->
+<header>
+    <h1>ArchiSpace</h1>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- ===== HERO ===== -->
+<div class="hero">
+    <h2>Designing Spaces That Inspire Living</h2>
+</div>
+
+<!-- ===== SERVICES ===== -->
+<section id="services">
+    <h2 class="section-title">Our Services</h2>
+
+    <div class="services">
+        <div class="service-box">
+            <h3>Residential Design</h3>
+            <p>Luxury homes tailored to modern lifestyles.</p>
+        </div>
+
+        <div class="service-box">
+            <h3>Commercial Projects</h3>
+            <p>Professional architectural business spaces.</p>
+        </div>
+
+        <div class="service-box">
+            <h3>Interior Planning</h3>
+            <p>Functional interiors with aesthetic excellence.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ===== PROJECTS ===== -->
+<section id="projects">
+    <h2 class="section-title">Projects</h2>
+
+    <div class="projects">
+        <img src="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6">
+        <img src="https://images.unsplash.com/photo-1494526585095-c41746248156">
+        <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858">
+    </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact">
+    <h2 class="section-title">Contact Us</h2>
+
+    <form onsubmit="redirectPage(event)">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <textarea rows="4" placeholder="Message"></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    © 2026 ArchiSpace Architects
+</footer>
+
+<!-- ===============================
+     🔁 REDIRECT SCRIPT
+     After form submission
+================================ -->
+
+<script>
+
+function redirectPage(event){
+
+    event.preventDefault(); // Stop real submit
+
+    alert("Inquiry Submitted Successfully!");
+
+    // Redirect to thank you page
+    window.location.href = "thankyou.html";
+}
+
+</script>
+
+</body>
+</html>
