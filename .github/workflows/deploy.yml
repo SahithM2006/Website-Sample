@@ -62,7 +62,7 @@ jobs:
       run: npm run build
 
     - name: Deploy to Heroku (if configured)
-      if: secrets.HEROKU_API_KEY != ''
+      if: ${{ secrets.HEROKU_API_KEY != '' }}
       uses: akhileshns/heroku-deploy@v3.12.12
       with:
         heroku_api_key: ${{secrets.HEROKU_API_KEY}}
