@@ -1,44 +1,335 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>ArchiSpace | Home</title>
-    <link rel="stylesheet" href="Style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ArchiSpace | Home</title>
+
+<style>
+/* ===== GENERAL ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    transition: 0.3s;
+    scroll-behavior: smooth;
+}
+
+/* ===== HEADER ===== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: #111;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ff6600;
+}
+
+.header-controls button {
+    margin-left: 10px;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+/* ===== HERO ===== */
+.hero {
+    background: url("https://source.unsplash.com/1600x700/?modern-architecture") no-repeat center/cover;
+    color: white;
+    text-align: center;
+    padding: 150px 20px;
+}
+
+.hero h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.cta-btn {
+    padding: 10px 20px;
+    border: none;
+    background: #ff6600;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cta-btn:hover {
+    background: #e65c00;
+}
+
+/* ===== SECTIONS ===== */
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.section-title {
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+/* ===== CARDS ===== */
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    background: #f4f4f4;
+    padding: 25px;
+    width: 260px;
+    border-radius: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    background: #ff6600;
+    color: white;
+}
+
+/* ===== SLIDER ===== */
+.slider {
+    position: relative;
+    display: inline-block;
+}
+
+.slider img {
+    width: 90%;
+    max-width: 900px;
+    border-radius: 10px;
+}
+
+.slider-buttons {
+    position: absolute;
+    top: 45%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.slider-buttons button {
+    padding: 10px;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* ===== MODAL ===== */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+    background: white;
+    width: 300px;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.modal-content input,
+.modal-content textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+}
+
+.close {
+    float: right;
+    cursor: pointer;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: #111;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* ===== SCROLL TOP ===== */
+#scrollTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 14px;
+    display: none;
+    border: none;
+    background: #ff6600;
+    color: white;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+/* ===== DARK MODE ===== */
+.dark {
+    background: #121212;
+    color: white;
+}
+
+.dark .card {
+    background: #1e1e1e;
+}
+
+.dark header,
+.dark footer {
+    background: #000;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <header>
-        <h1>ArchiSpace</h1>
-        <button class="menu-toggle" aria-label="Toggle menu">☰ Menu</button>
-        <nav>
-            <a href="Index.html">Home</a>
-            <a href="Services.html">Services</a>
-            <a href="Projects.html">Projects</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
-
-    <div class="hero">
-        <h2>Designing Spaces That Inspire Living</h2>
+<header>
+    <h1>ArchiSpace</h1>
+    <div class="header-controls">
+        <button id="themeToggle">🌙</button>
     </div>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
 
-    <section>
-        <h2 class="section-title">Welcome</h2>
-        <p>
-            ArchiSpace Architects delivers innovative architectural solutions blending
-            creativity, sustainability, and modern engineering excellence.
-        </p>
-    </section>
+<div class="hero">
+    <h2>Designing Spaces That Inspire Living</h2>
+    <button class="cta-btn">Explore Projects</button>
+</div>
 
-    <footer>
-        © 2026 ArchiSpace Architects
-    </footer>
+<section id="services">
+    <h2 class="section-title">Our Services</h2>
+    <div class="card-container">
+        <div class="card">
+            <h3>Residential Design</h3>
+            <p>Modern and sustainable home architecture.</p>
+        </div>
+        <div class="card">
+            <h3>Commercial Spaces</h3>
+            <p>Smart and innovative office & retail designs.</p>
+        </div>
+        <div class="card">
+            <h3>Interior Design</h3>
+            <p>Elegant and functional interior planning.</p>
+        </div>
+    </div>
+</section>
 
-    <button id="scrollTop" title="Back to top">↑</button>
+<section id="gallery">
+    <h2 class="section-title">Featured Projects</h2>
+    <div class="slider">
+        <img id="sliderImage" src="https://source.unsplash.com/900x400/?architecture" alt="Project">
+        <div class="slider-buttons">
+            <button onclick="prevSlide()">❮</button>
+            <button onclick="nextSlide()">❯</button>
+        </div>
+    </div>
+</section>
 
-    <script src="script.js"></script>
+<section id="contact">
+    <h2 class="section-title">Get In Touch</h2>
+    <button onclick="openModal()" class="cta-btn">Contact Us</button>
+</section>
+
+<footer>
+    © 2026 ArchiSpace Architects
+</footer>
+
+<button id="scrollTop">↑</button>
+
+<!-- Contact Modal -->
+<div id="contactModal" class="modal">
+    <div class="modal-content">
+        <span onclick="closeModal()" class="close">&times;</span>
+        <h3>Contact Us</h3>
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Your Email">
+        <textarea placeholder="Your Message"></textarea>
+        <button class="cta-btn">Send</button>
+    </div>
+</div>
+
+<script>
+// Dark Mode
+document.getElementById("themeToggle").onclick = function() {
+    document.body.classList.toggle("dark");
+};
+
+// Scroll Top
+const scrollBtn = document.getElementById("scrollTop");
+
+window.onscroll = function() {
+    scrollBtn.style.display = window.scrollY > 200 ? "block" : "none";
+};
+
+scrollBtn.onclick = function() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+};
+
+// Slider
+const images = [
+    "https://source.unsplash.com/900x400/?architecture",
+    "https://source.unsplash.com/900x400/?interior-design",
+    "https://source.unsplash.com/900x400/?modern-house"
+];
+
+let index = 0;
+
+function nextSlide() {
+    index = (index + 1) % images.length;
+    document.getElementById("sliderImage").src = images[index];
+}
+
+function prevSlide() {
+    index = (index - 1 + images.length) % images.length;
+    document.getElementById("sliderImage").src = images[index];
+}
+
+// Modal
+function openModal() {
+    document.getElementById("contactModal").style.display = "block";
+}
+
+function closeModal() {
+    document.getElementById("contactModal").style.display = "none";
+}
+</script>
 
 </body>
-
 </html>
